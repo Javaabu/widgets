@@ -1,0 +1,5 @@
+{
+    "name": "Widgets",
+    "description": "WordPress classic-style widgets for Laravel: widget classes with javaabu/stencil settings rendered in Blade and React, developer-defined locations, and Blade or Inertia React pages where admins add, order, configure and remove widgets",
+    "version": "1"
+}

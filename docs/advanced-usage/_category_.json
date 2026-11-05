@@ -1,0 +1,11 @@
+{
+    "position": 1.32,
+    "label": "Advanced Usage",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "slug": "/widgets/_categories/advanced-usage",
+        "description": "Configuration, translatable settings, overriding controllers, policies and views, storage and caching, the JavaScript API, and Dhivehi and RTL."
+    }
+}

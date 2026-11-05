@@ -1,0 +1,39 @@
+# javaabu/widgets
+
+> WordPress classic-style widgets for Laravel. A widget type is a PHP class extending Javaabu\Widgets\Widget: its settings are javaabu/stencil components, and it renders with a Blade view and a React component. Developers define locations (Widgets::location('sidebar', ...)), rendered with <x-widgets::location name="sidebar" /> or <WidgetLocation> from @javaabu/widgets. Admins add, order (keyboard-accessible drag and drop), configure and remove widgets on pages from Route::widgets(), in Blade or Inertia React. Permissions come from javaabu/permissions (view_widgets, edit_widgets, per-location). Settings marked ->translatable() are per language with javaabu/translatable. English and Dhivehi, RTL.
+
+Paths are relative to this file. In a project, that's vendor/javaabu/widgets/.
+
+## Rules
+
+- Define locations and register widget types in a service provider's boot(): `Widgets::location('footer', fn () => __('Footer'))->allow([...])->max(3)`, `Widgets::register(MyWidget::class)`. Use closures for labels so they're translated per request.
+- A widget extends `Javaabu\Widgets\Widget` with a static `key()` (never change it once saved), `name()`, `settings()` (stencil components with labels, rules and defaults), and optionally `data()`, `view()`, `component()` and `shouldRender()`. Don't put the wrapper <section> in the view: the location adds it.
+- Read settings with `$widget->setting('key')` (current locale, defaults filled in). Don't read `$widget->settings` directly for display: translatable settings are stored as locale maps there.
+- Render locations with `<x-widgets::location name="..." />` in Blade, and `<WidgetLocation name="..." widgets={...} />` in React with data from `Widgets::props([...])` or `Widgets::toArray('...')`. Never loop over WidgetInstance models in a view.
+- Register a React component for every custom widget: `registerWidgets({ "recent-posts": RecentPosts })`. Keep its markup the same as the Blade view.
+- Links in settings use the `SafeUrl` rule; render them through `Url::safe()` / `safeUrl()`.
+- Register the admin routes yourself with `Route::widgets([...])` and the guard, prefix, name and middleware the app uses. Give roles `edit_widgets` (and location permissions), then run `php artisan permissions:sync`.
+- Override behaviour by extending `WidgetsController` (config `widgets.controllers.widgets`) or `WidgetPolicy` (`widgets.policy`, `Gate::policy()`), not by copying routes.
+- Pass every user-facing string through `__()` and add it to `lang/dv.json`.
+
+## Docs
+
+- [Introduction](docs/intro.md): what the package does
+- [Requirements](docs/requirements.md): PHP, Laravel, dependencies, optional Inertia and translatable, npm
+- [Installation & Setup](docs/installation-and-setup.md): installing, migrations, locations, the admin routes, assets through manifest, Inertia, publishing
+- [AI assistants](docs/ai-assistants.md): Laravel Boost and llms.txt
+- [Locations](docs/basic-usage/locations.md): defining locations, every option, rendering in Blade and React, wrappers, reading widgets
+- [Built-in widgets](docs/basic-usage/built-in-widgets.md): Text, Image and Link: settings, markup, safe links, styling
+- [Creating widgets](docs/basic-usage/creating-widgets.md): the Widget class, settings, the Blade view, the React component, testing
+- [Admin pages](docs/basic-usage/admin-pages.md): Route::widgets() options, routes, JSON, reordering with the mouse and keyboard, moving, the stacks and their props
+- [Permissions](docs/basic-usage/permissions.md): view_widgets, edit_widgets, location permissions, the policy's abilities, guards
+- [Configuration](docs/advanced-usage/configuration.md): every config option and the facade's methods
+- [Translatable settings](docs/advanced-usage/translatable-settings.md): ->translatable(), per-language inputs, storage, fallback, without javaabu/translatable
+- [Controllers, policies and views](docs/advanced-usage/controllers-and-views.md): extending the controller, overriding the policy, publishing Blade views, overriding React files
+- [Storage and caching](docs/advanced-usage/storage-and-caching.md): the model and table, adding widgets in code, the cache
+- [JavaScript API](docs/advanced-usage/javascript-api.md): WidgetLocation, the registry, the pages, SortableList, createSortable
+- [Dhivehi and RTL](docs/advanced-usage/dhivehi-and-rtl.md): translations, RTL, strings for review
+- [Questions and Security](docs/questions-and-security.md): support and reporting vulnerabilities
+- [Changelog](docs/changelog.md): where changes are listed
+- [About Us](docs/about-us.md): Javaabu
+- [Contributing to the docs](docs/contributing-to-docs.md): how the docs are built
