@@ -1,129 +1,129 @@
 {
-  "locations": [
-    {
-      "key": "sidebar",
-      "label": "Sidebar",
-      "description": "Next to posts",
-      "max": null,
-      "can_manage": true,
-      "is_full": false,
-      "order_url": "http://localhost/widgets/sidebar/order",
-      "create_url": "http://localhost/widgets/sidebar/create",
-      "widgets": [
+    "locations": [
         {
-          "id": 1,
-          "type": "text",
-          "location": "sidebar",
-          "title": "މަރުޙަބާ",
-          "name": "Text",
-          "icon": "type",
-          "missing": false,
-          "order": 0,
-          "edit_url": "http://localhost/widgets/sidebar/1/edit",
-          "delete_url": "http://localhost/widgets/sidebar/1"
+            "key": "sidebar",
+            "label": "Sidebar",
+            "description": "Next to posts",
+            "max": null,
+            "can_manage": true,
+            "is_full": false,
+            "order_url": "http://localhost/widgets/sidebar/order",
+            "create_url": "http://localhost/widgets/sidebar/create",
+            "widgets": [
+                {
+                    "id": 1,
+                    "type": "text",
+                    "location": "sidebar",
+                    "title": "މަރުޙަބާ",
+                    "name": "Text",
+                    "icon": "type",
+                    "missing": false,
+                    "order": 0,
+                    "edit_url": "http://localhost/widgets/sidebar/1/edit",
+                    "delete_url": "http://localhost/widgets/sidebar/1"
+                },
+                {
+                    "id": 2,
+                    "type": "link",
+                    "location": "sidebar",
+                    "title": "Link",
+                    "name": "Link",
+                    "icon": "link",
+                    "missing": false,
+                    "order": 1,
+                    "edit_url": "http://localhost/widgets/sidebar/2/edit",
+                    "delete_url": "http://localhost/widgets/sidebar/2"
+                }
+            ],
+            "available": [
+                {
+                    "key": "text",
+                    "name": "Text",
+                    "description": "A title and some text.",
+                    "icon": "type",
+                    "component": "Text",
+                    "create_url": "http://localhost/widgets/sidebar/create?type=text"
+                },
+                {
+                    "key": "image",
+                    "name": "Image",
+                    "description": "An image with a caption and an optional link.",
+                    "icon": "image",
+                    "component": "Image",
+                    "create_url": "http://localhost/widgets/sidebar/create?type=image"
+                },
+                {
+                    "key": "link",
+                    "name": "Link",
+                    "description": "A short description and a button that links somewhere.",
+                    "icon": "link",
+                    "component": "Link",
+                    "create_url": "http://localhost/widgets/sidebar/create?type=link"
+                },
+                {
+                    "key": "counter",
+                    "name": "Counter",
+                    "description": null,
+                    "icon": null,
+                    "component": "Counter",
+                    "create_url": "http://localhost/widgets/sidebar/create?type=counter"
+                }
+            ]
         },
         {
-          "id": 2,
-          "type": "link",
-          "location": "sidebar",
-          "title": "Link",
-          "name": "Link",
-          "icon": "link",
-          "missing": false,
-          "order": 1,
-          "edit_url": "http://localhost/widgets/sidebar/2/edit",
-          "delete_url": "http://localhost/widgets/sidebar/2"
+            "key": "footer",
+            "label": "Footer",
+            "description": null,
+            "max": 2,
+            "can_manage": false,
+            "is_full": false,
+            "order_url": "http://localhost/widgets/footer/order",
+            "create_url": "http://localhost/widgets/footer/create",
+            "widgets": [
+                {
+                    "id": 3,
+                    "type": "text",
+                    "location": "footer",
+                    "title": "Text",
+                    "name": "Text",
+                    "icon": "type",
+                    "missing": false,
+                    "order": 0,
+                    "edit_url": "http://localhost/widgets/footer/3/edit",
+                    "delete_url": "http://localhost/widgets/footer/3"
+                }
+            ],
+            "available": []
         }
-      ],
-      "available": [
-        {
-          "key": "text",
-          "name": "Text",
-          "description": "A title and some text.",
-          "icon": "type",
-          "component": "Text",
-          "create_url": "http://localhost/widgets/sidebar/create?type=text"
-        },
-        {
-          "key": "image",
-          "name": "Image",
-          "description": "An image with a caption and an optional link.",
-          "icon": "image",
-          "component": "Image",
-          "create_url": "http://localhost/widgets/sidebar/create?type=image"
-        },
-        {
-          "key": "link",
-          "name": "Link",
-          "description": "A short description and a button that links somewhere.",
-          "icon": "link",
-          "component": "Link",
-          "create_url": "http://localhost/widgets/sidebar/create?type=link"
-        },
-        {
-          "key": "counter",
-          "name": "Counter",
-          "description": null,
-          "icon": null,
-          "component": "Counter",
-          "create_url": "http://localhost/widgets/sidebar/create?type=counter"
-        }
-      ]
+    ],
+    "status": null,
+    "strings": {
+        "title": "Widgets",
+        "description": "Add widgets to each location, put them in order and configure them.",
+        "empty": "No widgets yet.",
+        "no_locations": "There are no widget locations.",
+        "add": "Add widget",
+        "add_to": "Add a widget to :location",
+        "choose": "Choose a widget",
+        "edit": "Edit",
+        "remove": "Remove",
+        "confirm_remove": "Remove this widget?",
+        "full": "This location is full.",
+        "missing": "This widget type is no longer available.",
+        "back": "Back to widgets",
+        "cancel": "Cancel",
+        "new_title": "Add :widget to :location",
+        "edit_title": "Edit :widget in :location",
+        "handle": "Move :widget",
+        "save_order": "Save order",
+        "order_saved": "Widget order saved.",
+        "order_failed": "The order couldn't be saved. Try again.",
+        "instructions": "To move a widget with the keyboard, press Space on its handle, use the arrow keys, then press Space again to drop it or Escape to cancel.",
+        "picked_up": ":widget picked up. Position :position of :total.",
+        "moved": ":widget moved to position :position of :total.",
+        "dropped": ":widget dropped at position :position of :total.",
+        "cancelled": "Move cancelled. :widget is back at position :position of :total."
     },
-    {
-      "key": "footer",
-      "label": "Footer",
-      "description": null,
-      "max": 2,
-      "can_manage": false,
-      "is_full": false,
-      "order_url": "http://localhost/widgets/footer/order",
-      "create_url": "http://localhost/widgets/footer/create",
-      "widgets": [
-        {
-          "id": 3,
-          "type": "text",
-          "location": "footer",
-          "title": "Text",
-          "name": "Text",
-          "icon": "type",
-          "missing": false,
-          "order": 0,
-          "edit_url": "http://localhost/widgets/footer/3/edit",
-          "delete_url": "http://localhost/widgets/footer/3"
-        }
-      ],
-      "available": []
-    }
-  ],
-  "status": null,
-  "strings": {
-    "title": "Widgets",
-    "description": "Add widgets to each location, put them in order and configure them.",
-    "empty": "No widgets yet.",
-    "no_locations": "There are no widget locations.",
-    "add": "Add widget",
-    "add_to": "Add a widget to :location",
-    "choose": "Choose a widget",
-    "edit": "Edit",
-    "remove": "Remove",
-    "confirm_remove": "Remove this widget?",
-    "full": "This location is full.",
-    "missing": "This widget type is no longer available.",
-    "back": "Back to widgets",
-    "cancel": "Cancel",
-    "new_title": "Add :widget to :location",
-    "edit_title": "Edit :widget in :location",
-    "handle": "Move :widget",
-    "save_order": "Save order",
-    "order_saved": "Widget order saved.",
-    "order_failed": "The order couldn't be saved. Try again.",
-    "instructions": "To move a widget with the keyboard, press Space on its handle, use the arrow keys, then press Space again to drop it or Escape to cancel.",
-    "picked_up": ":widget picked up. Position :position of :total.",
-    "moved": ":widget moved to position :position of :total.",
-    "dropped": ":widget dropped at position :position of :total.",
-    "cancelled": "Move cancelled. :widget is back at position :position of :total."
-  },
-  "layout": "layouts.app",
-  "layout_section": "content"
+    "layout": "layouts.app",
+    "layout_section": "content"
 }

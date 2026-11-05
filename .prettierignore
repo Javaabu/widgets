@@ -11,3 +11,5 @@ composer.lock
 docs/**/*.json
 tests/Fixtures
 examples/dist
+lang
+tests/js/fixtures
