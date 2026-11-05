@@ -317,7 +317,9 @@ class WidgetsControllerTest extends TestCase
         $this->actingAs($this->user())
             ->get('/widgets')
             ->assertOk()
-            ->assertSee(__('Widgets'))
+            ->assertSee('ވިޖެޓްތައް')
+            ->assertSee('ސައިޑްބާ')
+            ->assertSee('ވިޖެޓް އިތުރުކުރޭ')
             ->assertSee('dir="rtl"', false);
     }
 }
