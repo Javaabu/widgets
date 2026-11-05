@@ -1,0 +1,108 @@
+{
+    "name": "javaabu/widgets",
+    "description": "WordPress classic-style widgets for Laravel: widget classes with javaabu/stencil settings rendered in Blade and React, developer-defined locations, and Blade or Inertia React pages where admins add, order, configure and remove widgets",
+    "homepage": "https://github.com/Javaabu/widgets",
+    "license": "MIT",
+    "keywords": [
+        "javaabu",
+        "laravel",
+        "widgets",
+        "sidebars",
+        "stencil",
+        "blade",
+        "inertia",
+        "react",
+        "dhivehi"
+    ],
+    "authors": [
+        {
+            "name": "Javaabu Pvt. Ltd.",
+            "email": "info@javaabu.com",
+            "homepage": "https://javaabu.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/cache": "^12.0 || ^13.0",
+        "illuminate/contracts": "^12.0 || ^13.0",
+        "illuminate/database": "^12.0 || ^13.0",
+        "illuminate/http": "^12.0 || ^13.0",
+        "illuminate/routing": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0",
+        "illuminate/validation": "^12.0 || ^13.0",
+        "illuminate/view": "^12.0 || ^13.0",
+        "javaabu/forms": "^2.0@dev",
+        "javaabu/manifest": "^1.0@dev",
+        "javaabu/permissions": "^3.0@dev",
+        "javaabu/stencil": "^1.0@dev"
+    },
+    "require-dev": {
+        "inertiajs/inertia-laravel": "^2.0",
+        "javaabu/boost-javaabu-guidelines": "^1.4",
+        "javaabu/translatable": "^3.0@dev",
+        "laravel/pint": "^1.24",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.5.3 || ^12.5.8"
+    },
+    "suggest": {
+        "inertiajs/inertia-laravel": "Renders the widget pages with Inertia React when widgets.views is inertia (^2.0)",
+        "javaabu/translatable": "One value per language for translatable widget settings (^3.0)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Javaabu\\Widgets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Javaabu\\Widgets\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-clover=clover.xml",
+        "lint": "vendor/bin/pint --test",
+        "format": "vendor/bin/pint"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Javaabu\\Widgets\\WidgetsServiceProvider"
+            ],
+            "aliases": {
+                "Widgets": "Javaabu\\Widgets\\Facades\\Widgets"
+            }
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Javaabu/forms"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Javaabu/manifest"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Javaabu/permissions"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Javaabu/stencil"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/n4ff4h/translatable"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

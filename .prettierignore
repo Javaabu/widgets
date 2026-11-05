@@ -1,0 +1,13 @@
+dist
+coverage
+node_modules
+vendor
+build
+pnpm-lock.yaml
+*.php
+*.md
+composer.json
+composer.lock
+docs/**/*.json
+tests/Fixtures
+examples/dist
