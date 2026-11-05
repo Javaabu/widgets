@@ -1,0 +1,17 @@
+{
+  "resources/css/widgets.css": {
+    "file": "assets/widgets-D5Y3fpLT.css",
+    "name": "widgets",
+    "names": [
+      "widgets.css"
+    ],
+    "src": "resources/css/widgets.css",
+    "isEntry": true
+  },
+  "resources/js/blade/admin.ts": {
+    "file": "assets/admin-D3zRIvKe.js",
+    "name": "admin",
+    "src": "resources/js/blade/admin.ts",
+    "isEntry": true
+  }
+}

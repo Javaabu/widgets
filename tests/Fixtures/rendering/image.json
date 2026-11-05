@@ -1,0 +1,35 @@
+{
+    "widgets": [
+        {
+            "id": 1,
+            "type": "image",
+            "component": "Image",
+            "location": "sidebar",
+            "settings": {
+                "title": "Malé",
+                "src": "https://example.com/male.jpg",
+                "alt": "މާލެ",
+                "caption": "ރާއްޖޭގެ ވެރިރަށް",
+                "link": "/male"
+            },
+            "data": {
+                "src": "https://example.com/male.jpg",
+                "link": "/male"
+            }
+        },
+        {
+            "id": 2,
+            "type": "image",
+            "component": "Image",
+            "location": "sidebar",
+            "settings": {
+                "src": "/images/a.png"
+            },
+            "data": {
+                "src": "/images/a.png",
+                "link": null
+            }
+        }
+    ],
+    "html": "<div class=\"widgets widgets-sidebar\" data-widget-location=\"sidebar\">\n<section class=\"widget widget-image\" id=\"widget-1\" data-widget=\"image\">\n<h2 class=\"widget-title\">Malé</h2>\n<figure class=\"widget-image\">\n<a href=\"/male\"><img src=\"https://example.com/male.jpg\" alt=\"މާލެ\" loading=\"lazy\"></a>\n<figcaption>ރާއްޖޭގެ ވެރިރަށް</figcaption>\n</figure>\n</section>\n\n<section class=\"widget widget-image\" id=\"widget-2\" data-widget=\"image\">\n<figure class=\"widget-image\">\n<img src=\"/images/a.png\" alt=\"\" loading=\"lazy\">\n</figure>\n</section>\n\n</div>"
+}

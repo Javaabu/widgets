@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widgets: Blade admin script</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Blade admin script</h1>
+        <p>
+          What widgets::pages.index renders for a location, with <code>widgets::admin</code>. Drag a handle, or focus
+          one and press Space, the arrow keys, then Space (Escape cancels). <a href="./react.html">React example</a> ·
+          <button type="button" id="direction">RTL / ދިވެހި</button>
+        </p>
+      </header>
+
+      <div
+        data-widgets-admin
+        data-strings='{"picked_up":":widget picked up. Position :position of :total.","order_saved":"Widget order saved.","order_failed":"The order couldn&#039;t be saved. Try again."}'
+      >
+        <p id="widgets-instructions" class="sr-only">
+          To move a widget with the keyboard, press Space on its handle, use the arrow keys, then press Space again to
+          drop it or Escape to cancel.
+        </p>
+        <div class="sr-only" aria-live="assertive" aria-atomic="true" data-widgets-announcer></div>
+
+        <section data-widgets-location="sidebar">
+          <h2>Sidebar</h2>
+          <form method="POST" action="/widgets/sidebar/order" data-widgets-order>
+            <input type="hidden" name="_method" value="PUT" />
+            <ol data-widgets-sortable aria-label="Sidebar">
+              <li data-widget-id="1" data-widget-title="މަރުޙަބާ">
+                <input type="hidden" name="widgets[]" value="1" />
+                <button
+                  type="button"
+                  data-widgets-handle
+                  aria-describedby="widgets-instructions"
+                  aria-label="Move މަރުޙަބާ"
+                >
+                  ≡
+                </button>
+                <span dir="auto">މަރުޙަބާ</span>
+              </li>
+              <li data-widget-id="2" data-widget-title="Image">
+                <input type="hidden" name="widgets[]" value="2" />
+                <button
+                  type="button"
+                  data-widgets-handle
+                  aria-describedby="widgets-instructions"
+                  aria-label="Move Image"
+                >
+                  ≡
+                </button>
+                <span>Image</span>
+              </li>
+              <li data-widget-id="3" data-widget-title="Contact us">
+                <input type="hidden" name="widgets[]" value="3" />
+                <button
+                  type="button"
+                  data-widgets-handle
+                  aria-describedby="widgets-instructions"
+                  aria-label="Move Contact us"
+                >
+                  ≡
+                </button>
+                <span>Contact us</span>
+              </li>
+            </ol>
+          </form>
+        </section>
+
+        <h2>Saved orders</h2>
+        <pre id="log" dir="ltr"></pre>
+      </div>
+    </main>
+    <script type="module" src="./blade.ts"></script>
+  </body>
+</html>

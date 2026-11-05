@@ -1,0 +1,147 @@
+{
+  "form": {
+    "stencil": 1,
+    "id": "widget-link",
+    "action": "http://localhost/widgets/sidebar/1",
+    "method": "PATCH",
+    "operation": "edit",
+    "submit": "Save widget",
+    "state": {
+      "_location": "sidebar",
+      "title": "ގުޅުއްވާ",
+      "description": null,
+      "label": "Contact",
+      "url": "/contact",
+      "new_tab": null
+    },
+    "live": null,
+    "components": [
+      {
+        "type": "select",
+        "key": "_location",
+        "name": "_location",
+        "component": "Select",
+        "props": {
+          "label": "Location",
+          "required": true,
+          "options": [
+            {
+              "value": "sidebar",
+              "label": "Sidebar"
+            },
+            {
+              "value": "footer",
+              "label": "Footer"
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "key": "title",
+        "name": "title",
+        "component": "Text",
+        "props": {
+          "label": "Title",
+          "maxLength": 255
+        }
+      },
+      {
+        "type": "textarea",
+        "key": "description",
+        "name": "description",
+        "component": "Textarea",
+        "props": {
+          "label": "Description",
+          "maxLength": 1000
+        }
+      },
+      {
+        "type": "text",
+        "key": "label",
+        "name": "label",
+        "component": "Text",
+        "props": {
+          "label": "Button text",
+          "required": true,
+          "maxLength": 255
+        }
+      },
+      {
+        "type": "text",
+        "key": "url",
+        "name": "url",
+        "component": "Text",
+        "props": {
+          "label": "Link",
+          "required": true,
+          "maxLength": 2048
+        }
+      },
+      {
+        "type": "checkbox",
+        "key": "new_tab",
+        "name": "new_tab",
+        "component": "Checkbox",
+        "props": {
+          "label": "Open in a new tab"
+        }
+      }
+    ]
+  },
+  "location": {
+    "key": "sidebar",
+    "label": "Sidebar",
+    "description": "Next to posts",
+    "max": null
+  },
+  "widget": {
+    "key": "link",
+    "name": "Link",
+    "description": "A short description and a button that links somewhere.",
+    "icon": "link",
+    "component": "Link"
+  },
+  "instance": {
+    "id": 1,
+    "type": "link",
+    "location": "sidebar",
+    "title": "ގުޅުއްވާ",
+    "name": "Link",
+    "icon": "link",
+    "missing": false,
+    "order": 0,
+    "edit_url": "http://localhost/widgets/sidebar/1/edit",
+    "delete_url": "http://localhost/widgets/sidebar/1"
+  },
+  "index_url": "http://localhost/widgets",
+  "strings": {
+    "title": "Widgets",
+    "description": "Add widgets to each location, put them in order and configure them.",
+    "empty": "No widgets yet.",
+    "no_locations": "There are no widget locations.",
+    "add": "Add widget",
+    "add_to": "Add a widget to :location",
+    "choose": "Choose a widget",
+    "edit": "Edit",
+    "remove": "Remove",
+    "confirm_remove": "Remove this widget?",
+    "full": "This location is full.",
+    "missing": "This widget type is no longer available.",
+    "back": "Back to widgets",
+    "cancel": "Cancel",
+    "new_title": "Add :widget to :location",
+    "edit_title": "Edit :widget in :location",
+    "handle": "Move :widget",
+    "save_order": "Save order",
+    "order_saved": "Widget order saved.",
+    "order_failed": "The order couldn't be saved. Try again.",
+    "instructions": "To move a widget with the keyboard, press Space on its handle, use the arrow keys, then press Space again to drop it or Escape to cancel.",
+    "picked_up": ":widget picked up. Position :position of :total.",
+    "moved": ":widget moved to position :position of :total.",
+    "dropped": ":widget dropped at position :position of :total.",
+    "cancelled": "Move cancelled. :widget is back at position :position of :total."
+  },
+  "layout": "layouts.app",
+  "layout_section": "content"
+}

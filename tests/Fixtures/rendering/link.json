@@ -1,0 +1,50 @@
+{
+    "widgets": [
+        {
+            "id": 1,
+            "type": "link",
+            "component": "Link",
+            "location": "sidebar",
+            "settings": {
+                "title": "ގުޅުއްވާ",
+                "description": "Get in touch",
+                "label": "ގުޅުއްވާ",
+                "url": "https://example.com/contact"
+            },
+            "data": {
+                "url": "https://example.com/contact",
+                "external": true
+            }
+        },
+        {
+            "id": 2,
+            "type": "link",
+            "component": "Link",
+            "location": "sidebar",
+            "settings": {
+                "label": "About",
+                "url": "/about",
+                "new_tab": true
+            },
+            "data": {
+                "url": "/about",
+                "external": false
+            }
+        },
+        {
+            "id": 3,
+            "type": "link",
+            "component": "Link",
+            "location": "sidebar",
+            "settings": {
+                "label": "Mail",
+                "url": "mailto:info@example.com"
+            },
+            "data": {
+                "url": "mailto:info@example.com",
+                "external": false
+            }
+        }
+    ],
+    "html": "<div class=\"widgets widgets-sidebar\" data-widget-location=\"sidebar\">\n<section class=\"widget widget-link\" id=\"widget-1\" data-widget=\"link\">\n<h2 class=\"widget-title\">ގުޅުއްވާ</h2>\n<p class=\"widget-description\">Get in touch</p>\n<a class=\"widget-button\" href=\"https://example.com/contact\" rel=\"noopener\">ގުޅުއްވާ</a>\n</section>\n\n<section class=\"widget widget-link\" id=\"widget-2\" data-widget=\"link\">\n<a class=\"widget-button\" href=\"/about\" target=\"_blank\" rel=\"noopener noreferrer\">About</a>\n</section>\n\n<section class=\"widget widget-link\" id=\"widget-3\" data-widget=\"link\">\n<a class=\"widget-button\" href=\"mailto:info@example.com\">Mail</a>\n</section>\n\n</div>"
+}

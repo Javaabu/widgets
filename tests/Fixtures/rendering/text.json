@@ -1,0 +1,26 @@
+{
+    "widgets": [
+        {
+            "id": 1,
+            "type": "text",
+            "component": "Text",
+            "location": "sidebar",
+            "settings": {
+                "title": "މަރުޙަބާ",
+                "text": "ފުރަތަމަ ބައި\nދެވަނަ ބައި"
+            },
+            "data": {}
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "component": "Text",
+            "location": "sidebar",
+            "settings": {
+                "text": "Only text, with <b>tags</b> & \"quotes\" it's"
+            },
+            "data": {}
+        }
+    ],
+    "html": "<div class=\"widgets widgets-sidebar\" data-widget-location=\"sidebar\">\n<section class=\"widget widget-text\" id=\"widget-1\" data-widget=\"text\">\n<h2 class=\"widget-title\">މަރުޙަބާ</h2>\n<div class=\"widget-text\">ފުރަތަމަ ބައި\nދެވަނަ ބައި</div>\n</section>\n\n<section class=\"widget widget-text\" id=\"widget-2\" data-widget=\"text\">\n<div class=\"widget-text\">Only text, with &lt;b&gt;tags&lt;/b&gt; &amp; &quot;quotes&quot; it&#039;s</div>\n</section>\n\n</div>"
+}
