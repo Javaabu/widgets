@@ -72,10 +72,14 @@ TextInput::make('url')->label(__('Link'))->rules([new SafeUrl]);
 
 # Styling
 
-The classes are `widget-title`, `widget-text`, `widget-image`, `widget-description` and `widget-button`, inside `.widget.widget-{type}`. Require the default styles where you render widgets:
+The classes are `widget-title`, `widget-text`, `widget-image`, `widget-description` and `widget-button`, inside `.widget.widget-{type}`. The default styles are `resources/css/widgets.css`.
 
-```blade
-@manifestRequire('widgets::styles')
-```
+- **Blade:** require them where you render widgets:
 
-The button's colours come from `--widgets-button-background` and `--widgets-button-color`. To change the markup, publish the views (`--tag=widgets-views`), or register your own widget class with the same key.
+  ```blade
+  @manifestRequire('widgets::styles')
+  ```
+
+- **React and Inertia:** `<WidgetLocation>`, `<Widget>` and the built-in components import the stylesheet themselves, so Vite bundles it wherever they're used. Don't import it again in your app.
+
+To change the styles everywhere, override the file with manifest (`php artisan manifest:override widgets css/widgets.css`): the override applies to the Blade asset and to the React imports. The button's colours come from `--widgets-button-background` and `--widgets-button-color`. To change the markup, publish the views (`--tag=widgets-views`), or register your own widget class with the same key.

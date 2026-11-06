@@ -24,6 +24,8 @@ import { WidgetLocation, Widget, registerWidgets, resolveWidget, builtInWidgets 
 
 Types: `WidgetData<Settings, Data>`, `WidgetLocations`, `WidgetComponentProps<Settings, Data>`, `WidgetComponent`, `WidgetComponents`.
 
+`WidgetLocation`, `Widget` and the built-in components import `resources/css/widgets.css`, so Vite bundles the widget styles with them. Your own widget components bring their own styles.
+
 # Admin pages
 
 | Export | |

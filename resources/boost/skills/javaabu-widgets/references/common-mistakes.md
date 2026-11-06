@@ -7,6 +7,8 @@
 - **A wrapper in the widget view.** The location wraps every widget in `<section class="widget widget-{type}">`. Change the wrapper with `->wrapper()` or `config('widgets.wrapper')`, not in each view.
 - **Forgetting the React component.** Inertia apps render widgets with React; a widget without `registerWidgets({ key: Component })` is skipped (with a console warning in development).
 - **Unchecked links.** `TextInput::make('url')` alone accepts `javascript:` URLs. Add `->rules([new SafeUrl])` and render with `Url::safe()`.
+- **Importing the widget CSS in an Inertia app.** `<WidgetLocation>` and the built-in components already import `resources/css/widgets.css`. To restyle, override it with `php artisan manifest:override widgets css/widgets.css` or use the `--widgets-button-*` variables.
+- **Installing React packages for a Blade app.** The Blade admin script needs nothing from npm; `manifest:check` only lists React packages for Inertia apps.
 - **Writing rows without the model.** The cache is cleared on model events. After a query builder update, call `Widgets::flush()`.
 - **Assuming the web guard.** Pass `'guard' => 'web_admin'` to `Route::widgets()` for admin users, and run `permissions:sync` so the permissions exist for that guard.
 - **A location permission nobody has.** `->permission('edit_footer_widgets')` replaces `edit_widgets` for that location; give it to a role.

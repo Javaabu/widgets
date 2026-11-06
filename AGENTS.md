@@ -29,6 +29,8 @@ Treat `Widget`, `WidgetLocation`, `WidgetsManager`/`Widgets`, `WidgetInstance`, 
 - A built-in widget's Blade view and React component must render the same markup. After changing either, run `WIDGETS_UPDATE_FIXTURES=1 vendor/bin/phpunit --filter RenderingFixturesTest`, review the diff, and make `pnpm test` pass.
 - When the Inertia props change, run `WIDGETS_UPDATE_FIXTURES=1 vendor/bin/phpunit --filter InertiaPagesTest` and commit `tests/js/fixtures`.
 - After changing `resources/js/blade`, `resources/js/sortable.ts` or `resources/css`, run `pnpm build` and commit `dist/`. CI fails when it's stale.
+- npm packages that only the React code (`@javaabu/widgets` imports, Inertia pages) uses go in the `for: 'pages'` npm call in `src/Assets/Assets.php`. The Blade script (`blade/admin.ts`, `sortable.ts`) must not import from npm; `FrontendAssetsTest` checks both.
+- React widget components import `resources/css/widgets.css` so Vite bundles it for Inertia apps; Blade loads it as `widgets::styles`.
 - Safe-link logic is in PHP (`Support/Url`) and TS (`url.ts`). Change both together.
 - Nothing may assume the `web` guard or `App\Models\User`; HTTP tests use two guards (`web` → `User`, `web_admin` → `Admin`).
 - Inertia and javaabu/translatable are optional: feature-detect them (translatable only through `Support\Translations`), keep them in `suggest`, and keep test classes loadable without them. CI has a leg without both.

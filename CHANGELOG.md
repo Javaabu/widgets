@@ -14,4 +14,5 @@ Initial development of v1.0:
 - Optional translatable settings with javaabu/translatable (one input per language, stored as locale maps, current-locale rendering with fallback).
 - Safe links (`SafeUrl` rule, `Url`, `safeUrl()`).
 - English and Dhivehi strings, RTL-safe views and styles.
+- React-only npm packages declared for manifest's pages scope, so Blade apps' `manifest:check` doesn't ask for them; React widget components import their stylesheet, so Inertia apps get it without a manual import.
 - Assets through javaabu/manifest with a prebuilt `dist/`; runnable examples; docs, `llms.txt` and the Laravel Boost guideline and skill.

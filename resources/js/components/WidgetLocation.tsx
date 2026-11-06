@@ -1,3 +1,5 @@
+// The widget styles; Vite bundles them wherever the component is used (Blade loads widgets::styles)
+import "../../css/widgets.css"
 import { createElement, type HTMLAttributes, type ReactNode } from "react"
 import { resolveWidget } from "../registry"
 import type { WidgetComponents, WidgetData } from "../types"

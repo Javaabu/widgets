@@ -61,6 +61,8 @@ const { widgets } = usePage<{ widgets: WidgetLocations }>().props
 <WidgetLocation name="sidebar" widgets={widgets.sidebar} />
 ```
 
+Styles: in Blade, add `@manifestRequire('widgets::styles')` where widgets render. In React, `<WidgetLocation>` and the built-in widgets import the stylesheet themselves, so don't import `widgets.css` in the app. React apps need `@javaabu/forms`, `@javaabu/onu`, React and `@inertiajs/react` (`php artisan manifest:check` lists them for Inertia apps); Blade apps need none of them.
+
 ## 3. Add the admin pages
 
 ```php

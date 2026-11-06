@@ -25,13 +25,15 @@ class Assets
             ->dist('../dist')
             ->style('styles', 'css/widgets.css')
             ->script('admin', 'js/blade/admin.ts')
+            // Only the React components and Inertia pages (imported as @javaabu/widgets) use
+            // these; the Blade script imports nothing from npm, so Blade apps aren't asked for them
             ->npm([
                 '@javaabu/forms' => 'github:Javaabu/react-forms#next-gen',
                 '@javaabu/onu' => '^0.2.1',
-            ], [
+            ], peer_dependencies: [
                 'react' => '^19.0',
                 'react-dom' => '^19.0',
                 '@inertiajs/react' => '^2.0 || ^3.0',
-            ]);
+            ], for: 'pages');
     }
 }

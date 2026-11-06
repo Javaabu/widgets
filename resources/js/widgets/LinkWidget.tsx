@@ -1,3 +1,5 @@
+// The widget styles; Vite bundles them wherever the component is used (Blade loads widgets::styles)
+import "../../css/widgets.css"
 import type { WidgetComponentProps } from "../types"
 import { filled, isExternalUrl, safeUrl } from "../url"
 

@@ -74,7 +74,7 @@ Give your admin role `edit_widgets`. The Blade pages extend `layouts.app` and fi
 [javaabu/manifest](https://github.com/Javaabu/manifest) delivers the package's assets:
 
 - `widgets::admin`: the Blade admin page's drag and drop script. The page requires it, and manifest injects it.
-- `widgets::styles`: optional styles for the built-in widgets. Require it where you render widgets, with `@manifestRequire('widgets::styles')`, or write your own CSS.
+- `widgets::styles`: styles for the built-in widgets and the location container (`resources/css/widgets.css`). In Blade, require it where you render widgets, with `@manifestRequire('widgets::styles')`, or write your own CSS. In React, `<WidgetLocation>` and the built-in widget components import it themselves, so Vite bundles it with no import in your app.
 - `@javaabu/widgets`: the React components and the Inertia pages. They're built by your app's Vite through manifest's plugin.
 
 Apps that don't build with Vite get the prebuilt script and styles from the package's `dist/`.
